@@ -7,20 +7,34 @@ userController.getUsers = async (req, res) => {
     res.json(users);
 };
 
-userController.getUser = function() {
-
+userController.getUser = async (req, res) => {
+    const user = await User.findById(req.params.id);
+    res.json(user);
 };
 
 userController.createUser = async (req, res) => {
-    console.log(req.body);
+    const user = new User(req.body);
+    await user.save();
+    res.json({
+        'status': "Usuário salvo com sucesso!"
+    });
 };
 
-userController.editUser = function() {
-    
+userController.editUser = async (req, res) => {
+    const { id } = req.params;
+    const user = {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        birth: req.body.birth
+    };
+    await User.findByIdAndUpdate(id, { $set: user }, { new: true });
+    res.json({ status: 'Usuário atualizado com sucesso!' });
 };
 
-userController.deleteUser = function() {
-
+userController.deleteUser = async (req, res) => {
+    await User.findByIdAndRemove(req.params.id);
+    res.json({ status: 'Usuário removido com sucesso!' });
 };
 
 module.exports = userController;
