@@ -15,12 +15,11 @@ Para executar cada um dos projetos, navegue até as respectivas pastas e execute
 
 frontend (localhost:4200)
 npm install
-npm start
+Para executar o projeto frontend: pelo terminal, acesse a pasta frontend e execute o comando: ng serve --open
 
 backend (localhost:3000)
 npm install
-npm start
+Para executar o projeto backend: pelo terminal, acesse a pasta raiz e execute o comando: npm run dev
 
-Para executar o banco de dados mongodb, navegue até a raiz do projeto e execute o seguinte comando:
 
 
