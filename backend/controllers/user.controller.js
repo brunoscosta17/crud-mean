@@ -13,7 +13,12 @@ userController.getUser = async (req, res) => {
 };
 
 userController.createUser = async (req, res) => {
-    const user = new User(req.body);
+    const user = new User({
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        birth: req.body.birth
+    });
     await user.save();
     res.json({
         'status': "Usuário salvo com sucesso!"

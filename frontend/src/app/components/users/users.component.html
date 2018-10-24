@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="userService.selectedUser._id">
+            <div class="row">
+              <div class="input-field col s12">
+                  <label>Nome</label>
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name" placeholder="Insira o nome">
+              </div>
+              <div class="input-field col s12">
+                <label>Email</label>
+                <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Insira o email">
+              </div>
+              <div class="input-field col s12">
+                  <label>Telefone(Celular)</label>
+                <input type="text" name="phone" #phone="ngModel" [(ngModel)]="userService.selectedUser.phone" placeholder="Insira o telefone" mask='(00) 0 0000 0000'>
+              </div>
+              <div class="input-field col s12">
+                  <label>Data de Nascimento</label>
+                <input type="text" name="birth" #birth="ngModel" [(ngModel)]="userService.selectedUser.birth" placeholder="Insira a data de nascimento" mask='00/00/0000'>
+              </div>
+              <div class="card-action">
+                <div class="input-field col s12">
+                  <button class="btn right" style="margin-left: 5px">Salvar</button>
+                  <button class="btn right" (click)="resetForm(userForm)">Limpar</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+      <table>
+        <thead>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Data de Nascimento</th>
+          <th>Operações</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userService.users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.birth }}</td>
+            <td>
+              <a (click)="editUser(user)">
+                <i class="material-icons">edit</i>
+              </a>
+              <a (click)="deleteUser(user._id)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
