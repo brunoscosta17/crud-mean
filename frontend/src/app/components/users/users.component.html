@@ -16,16 +16,16 @@
               </div>
               <div class="input-field col s12">
                   <label>Telefone(Celular)</label>
-                <input type="text" name="phone" #phone="ngModel" [(ngModel)]="userService.selectedUser.phone" placeholder="Insira o telefone" mask='(00) 0 0000 0000'>
+                <input type="tel" name="phone" #phone="ngModel" [(ngModel)]="userService.selectedUser.phone" placeholder="Insira o telefone" mask='(00) 0 0000 0000'>
               </div>
               <div class="input-field col s12">
                   <label>Data de Nascimento</label>
-                <input type="text" name="birth" #birth="ngModel" [(ngModel)]="userService.selectedUser.birth" placeholder="Insira a data de nascimento" mask='00/00/0000'>
+                <input type="date" name="birth" #birth="ngModel" [(ngModel)]="userService.selectedUser.birth" placeholder="Insira a data de nascimento">
               </div>
               <div class="card-action">
                 <div class="input-field col s12">
-                  <button class="btn right" style="margin-left: 5px">Salvar</button>
-                  <button class="btn right" (click)="resetForm(userForm)">Limpar</button>
+                  <button class="btn" style="margin-right: 5px">Salvar</button>
+                  <button class="btn" (click)="resetForm(userForm)">Limpar</button>
                 </div>
               </div>
             </div>

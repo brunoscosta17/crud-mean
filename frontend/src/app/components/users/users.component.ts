@@ -30,7 +30,7 @@ export class UsersComponent implements OnInit {
 
   resetForm(form?: NgForm) {
     if(form){
-      form.reset();
+      form.reset(form.value);
       this.userService.selectedUser = new User(); 
     }
   }
