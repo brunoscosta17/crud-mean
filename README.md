@@ -9,9 +9,11 @@ expressjs https://expressjs.com/pt-br/
 
 Solução contém 2 projetos separados por pastas na raiz:
 
-frontend
-backend
-Para executar cada um dos projetos, navegue até as respectivas pastas e execute os seguintes comandos no terminal (linux), ou powershell (windows)
+frontend e backend.
+
+Na raiz, execute o comando "npm install -g @angular/cli" para gerar código de aplicativo e bibliotecas contidas no projeto.
+
+Para executar cada um dos projetos, navegue até as respectivas pastas e execute os seguintes comandos no terminal (linux), ou powershell (windows):
 
 frontend (localhost:4200)
 npm install
