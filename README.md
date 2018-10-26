@@ -11,17 +11,18 @@ Solução contém 2 projetos separados por pastas na raiz:
 
 frontend e backend.
 
-Na raiz, execute o comando "npm install -g @angular/cli" para gerar código de aplicativo e bibliotecas contidas no projeto.
+Pelo terminal, acesse a raiz do projeto e execute o comando "npm install -g @angular/cli" para gerar código de aplicativo e bibliotecas contidas no projeto.
 
-Para executar cada um dos projetos, navegue até as respectivas pastas e execute os seguintes comandos no terminal (linux), ou powershell (windows):
+Para instalar as dependências de cada um dos projetos, pelo terminal, navegue até as respectivas pastas e execute os seguintes comandos no terminal (linux), ou powershell (windows):
 
-frontend (localhost:4200)
+Pasta frontend - (localhost:4200)
+
 npm install
+
 Para executar o projeto frontend: pelo terminal, acesse a pasta frontend e execute o comando: ng serve --open
 
-backend (localhost:3000)
+Pasta backend - (localhost:3000)
+
 npm install
+
 Para executar o projeto backend: pelo terminal, acesse a pasta raiz e execute o comando: npm run dev
-
-
-
